@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Sham Lakshmanan — Operations Director',
-    value: 'shamlakshamanan@eirec-ets.com',
-    href: 'mailto:shamlakshamanan@eirec-ets.com',
+    value: 'sham@eirec-ets.com',
+    href: 'mailto:sham@eirec-ets.com',
   }
 ];
 
