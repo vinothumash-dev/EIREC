@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Linkedin, Mail } from 'lucide-react';
 
 const teamMembers = [
   {
