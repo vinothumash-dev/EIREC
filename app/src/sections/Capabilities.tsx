@@ -160,6 +160,17 @@ export default function Capabilities() {
     return () => observer.disconnect();
   }, []);
 
+  // Preload all capability images to avoid lag on tab switch
+  useEffect(() => {
+    if (!isVisible) return;
+    capabilities.forEach((cap) => {
+      cap.images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+  }, [isVisible]);
+
   const activeCapability = capabilities.find((c) => c.id === activeTab);
 
   return (
@@ -218,6 +229,7 @@ export default function Capabilities() {
                     src={img}
                     alt={`${activeCapability.title} ${index + 1}`}
                     className="w-full h-full object-cover"
+                    loading="eager"
                   />
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${activeCapability.color} opacity-10`}
