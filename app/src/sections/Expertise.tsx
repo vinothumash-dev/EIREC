@@ -31,14 +31,6 @@ export default function Expertise() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCard, setActiveCard] = useState<number | null>(null);
 
-  // Preload expertise images in background after mount
-  useEffect(() => {
-    expertiseAreas.forEach(({ image }) => {
-      const img = new Image();
-      img.src = image;
-    });
-  }, []);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

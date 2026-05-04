@@ -99,7 +99,7 @@ const capabilities = [
     images: [
       `${import.meta.env.BASE_URL}images/capability-7.png`,
       `${import.meta.env.BASE_URL}images/capability-8.png`,
-      `${import.meta.env.BASE_URL}images/capability-9.jpg`,
+      `${import.meta.env.BASE_URL}images/capability-9.png`,
     ],
     color: 'from-blue-500 to-indigo-600',
   },
@@ -160,15 +160,6 @@ export default function Capabilities() {
     return () => observer.disconnect();
   }, []);
 
-  // Preload all capability images in background after mount
-  useEffect(() => {
-    capabilities.forEach((cap) => {
-      cap.images.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-      });
-    });
-  }, []);
   const activeCapability = capabilities.find((c) => c.id === activeTab);
 
   return (
@@ -227,7 +218,7 @@ export default function Capabilities() {
                     src={img}
                     alt={`${activeCapability.title} ${index + 1}`}
                     className="w-full h-full object-cover"
-                    loading="eager"
+                    loading="lazy"
                   />
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${activeCapability.color} opacity-10`}
