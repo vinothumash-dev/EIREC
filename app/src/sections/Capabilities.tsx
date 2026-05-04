@@ -160,16 +160,15 @@ export default function Capabilities() {
     return () => observer.disconnect();
   }, []);
 
-  // Preload all capability images to avoid lag on tab switch
+  // Preload all capability images in background after mount
   useEffect(() => {
-    if (!isVisible) return;
     capabilities.forEach((cap) => {
       cap.images.forEach((src) => {
         const img = new Image();
         img.src = src;
       });
     });
-  }, [isVisible]);
+  }, []);
   const activeCapability = capabilities.find((c) => c.id === activeTab);
 
   return (
