@@ -30,7 +30,7 @@ export default function Hero() {
         ref={heroRef}
         className="absolute inset-0 w-full h-[120%] -top-[10%]"
         style={{
-          backgroundImage: 'url(/images/hero-dark.jpg)',
+          backgroundImage: `url(${import.meta.env.BASE_URL}images/hero-dark.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
