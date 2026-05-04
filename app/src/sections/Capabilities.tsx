@@ -170,7 +170,6 @@ export default function Capabilities() {
       });
     });
   }, [isVisible]);
-
   const activeCapability = capabilities.find((c) => c.id === activeTab);
 
   return (
