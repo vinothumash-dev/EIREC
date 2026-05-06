@@ -96,7 +96,7 @@ export default function Clients() {
     <section
       id="clients"
       ref={sectionRef}
-      className="py-20 lg:py-32 bg-slate-50"
+      className="py-12 lg:py-20 bg-slate-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -115,8 +115,7 @@ export default function Clients() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Supporting Stakeholders Across{' '}
-            <span className="text-primary">the Energy Sector</span>
+            Supporting Stakeholders Across the Energy Sector
           </h2>
           <p
             className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${
@@ -133,7 +132,7 @@ export default function Clients() {
           {clientTypes.map((client, index) => (
             <div
               key={client.title}
-              className={`bg-white rounded-xl p-6 shadow-sm border border-border transition-all duration-700 hover:shadow-lg hover:border-primary/20 ${
+              className={`bg-blue-50 rounded-xl p-6 shadow-sm border border-border transition-all duration-700 hover:shadow-lg hover:border-primary/20 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}

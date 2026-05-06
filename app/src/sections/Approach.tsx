@@ -79,8 +79,7 @@ export default function Approach() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Built for{' '}
-            <span className="text-amber-400">Critical Environments</span>
+            Built for Critical Environments
           </h2>
           <p
             className={`text-lg text-white/70 transition-all duration-700 delay-200 ${

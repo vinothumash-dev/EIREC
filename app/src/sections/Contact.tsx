@@ -5,24 +5,36 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Sandeep Narasimha — Founder & Director',
-    value: 'sandeep@eirec-ets.com',
-    href: 'mailto:sandeep@eirec-ets.com',
+    value: 'sandeep@ei-rec.com',
+    href: 'mailto:sandeep@ei-rec.com',
   },
   {
     icon: Mail,
     title: 'Sham Lakshmanan — Operations Director',
-    value: 'sham@eirec-ets.com',
-    href: 'mailto:sham@eirec-ets.com',
+    value: 'sham@ei-rec.com',
+    href: 'mailto:sham@ei-rec.com',
   }
 ];
 
 const offices = [
   {
-    region: 'India',
-    location: 'EIREC ETS',
-    address: '20/60, 1st Seaward, Tiruvanmiyur, Mylapore, Chennai, Triplicane, Tamil Nadu 600041',
+    region: 'Singapore',
+    location: 'EIREC Talent Pte Ltd',
+    address: '10, Anson Road, #33-10 Suite C, International Plaza, Singapore - 079903',
     description: 'Global Headquarters',
   },
+  {
+    region: 'India',
+    location: 'EIREC Talent LLP',
+    address: '20/60, 1st Seaward Road, Thiruvanmiyur, Chennai - 600041',
+    description: 'Regional Office',
+  },
+  {
+    region: 'Malaysia',
+    location: 'EIREC Talent Sdn Bhd',
+    address: 'Suite 9-08, 9th Floor, Wisma Warisan (Heritage House), 33 Jalan Yap Ah Shak, Kuala Lumpur, Malaysia - 50300',
+    description: 'Regional Office',
+  }
 ];
 
 export default function Contact() {
@@ -48,7 +60,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 lg:py-32 bg-slate-50">
+    <section id="contact" ref={sectionRef} className="py-12 lg:py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Partner CTA Header */}
         <div

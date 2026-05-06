@@ -62,8 +62,7 @@ export default function Team() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Leadership Focused on{' '}
-            <span className="text-primary">Execution</span>
+            Leadership Focused on Execution
           </h2>
         </div>
 

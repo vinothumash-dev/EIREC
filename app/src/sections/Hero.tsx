@@ -1,21 +1,7 @@
-import { useEffect, useRef } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleParallax = () => {
-      if (heroRef.current) {
-        const scrolled = window.scrollY;
-        heroRef.current.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
-    };
-    window.addEventListener('scroll', handleParallax, { passive: true });
-    return () => window.removeEventListener('scroll', handleParallax);
-  }, []);
-
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -25,23 +11,23 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Parallax */}
-      <div
-        ref={heroRef}
-        className="absolute inset-0 w-full h-[120%] -top-[10%]"
-        style={{
-          backgroundImage: `url(${import.meta.env.BASE_URL}images/hero-dark.jpg)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={`${import.meta.env.BASE_URL}images/about_earth.mp4`} type="video/mp4" />
+      </video>
       
       {/* Gradient Overlays */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-slate-900/50" />
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
@@ -53,8 +39,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6">
-            Delivering Critical{' '}
-            <span className="text-amber-400">Energy Infrastructure</span>
+            Delivering Critical Energy Infrastructure
           </h1>
 
           {/* Subheadline */}

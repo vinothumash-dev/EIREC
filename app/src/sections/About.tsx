@@ -67,8 +67,7 @@ export default function About() {
             </div>
 
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground leading-tight mb-6">
-              Global Provider of{' '}
-              <span className="text-primary">Energy Technical Services</span>
+              Global Provider of Energy Technical Services
             </h2>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -92,8 +91,7 @@ export default function About() {
             {/* Mission Statement */}
             <div className="bg-slate-900 rounded-xl p-6 mb-8">
               <p className="text-white text-lg font-semibold text-center">
-                Built around one principle:{' '}
-                <span className="text-amber-400">Execution in critical environments.</span>
+                Built around one principle: Execution in critical environments.
               </p>
             </div>
           </div>

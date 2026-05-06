@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -136,7 +136,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-slate-500 text-sm text-center sm:text-left">
               Copyright &copy; {new Date().getFullYear()} EIREC Energy & Technical Services. All rights reserved.

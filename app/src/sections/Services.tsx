@@ -94,8 +94,7 @@ export default function Services() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            End-to-End{' '}
-            <span className="text-primary">Technical Delivery</span>
+            End-to-End Technical Delivery
           </h2>
           <p
             className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${
@@ -113,7 +112,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`bg-white rounded-xl p-6 shadow-sm border border-border transition-all duration-700 hover:shadow-lg hover:border-primary/20 ${
+              className={`bg-blue-50 rounded-xl p-6 shadow-sm border border-border transition-all duration-700 hover:shadow-lg hover:border-primary/20 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}

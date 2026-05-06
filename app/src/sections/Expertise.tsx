@@ -72,8 +72,7 @@ export default function Expertise() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Energy Sector{' '}
-            <span className="text-primary">Specializations</span>
+            Energy Sector Specializations
           </h2>
           <p
             className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${

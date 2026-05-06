@@ -59,6 +59,7 @@ const capabilities = [
       'Ensuring adherence to safety, quality, and project timelines',
       'Supporting project teams with technical documentation and method statements',
     ],
+    bgImage: `${import.meta.env.BASE_URL}images/capability-5.png`,
     images: [
       `${import.meta.env.BASE_URL}images/capability-4.png`,
       `${import.meta.env.BASE_URL}images/capability-5.png`,
@@ -96,6 +97,7 @@ const capabilities = [
       'Ensuring adherence to safety, quality, and operational standards',
       'Enabling efficient execution through integrated technical support',
     ],
+    bgImage: `${import.meta.env.BASE_URL}images/capability-8.png`,
     images: [
       `${import.meta.env.BASE_URL}images/capability-7.png`,
       `${import.meta.env.BASE_URL}images/capability-8.png`,
@@ -163,25 +165,41 @@ export default function Capabilities() {
   const activeCapability = capabilities.find((c) => c.id === activeTab);
 
   return (
-    <section id="capabilities" ref={sectionRef} className="py-20 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="capabilities" ref={sectionRef} className="relative overflow-hidden min-h-screen flex flex-col">
+      {/* Full-section Background Image */}
+      {activeCapability && (
+        <>
+          <img
+            key={activeCapability.id}
+            src={'bgImage' in activeCapability ? activeCapability.bgImage as string : activeCapability.images[0]}
+            alt={activeCapability.title}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+            loading="lazy"
+          />
+          {/* Dark gradient overlays — same pattern as Hero */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-slate-900/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+        </>
+      )}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col flex-1">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div
-            className={`inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full mb-4 transition-all duration-700 ${
+            className={`inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full mb-4 transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+            <span className="text-white/90 text-sm font-semibold uppercase tracking-wider">
               Our Capabilities
             </span>
           </div>
           <h2
-            className={`text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-6 transition-all duration-700 delay-100 ${
+            className={`text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 transition-all duration-700 delay-100 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Specialized Across <span className="text-primary">Energy Sectors</span>
+            Specialized Across Energy Sectors
           </h2>
         </div>
 
@@ -197,8 +215,8 @@ export default function Capabilities() {
               onClick={() => setActiveTab(cap.id)}
               className={`flex items-center gap-2 px-4 py-3 rounded-xl font-medium transition-all ${
                 activeTab === cap.id
-                  ? 'bg-slate-900 text-white'
-                  : 'bg-slate-100 text-foreground/70 hover:bg-slate-200'
+                  ? 'bg-white text-slate-900'
+                  : 'bg-white/15 text-white/80 hover:bg-white/25 backdrop-blur-sm'
               }`}
             >
               <cap.icon className="w-5 h-5" />
@@ -209,29 +227,12 @@ export default function Capabilities() {
 
         {/* Active Capability Content */}
         {activeCapability && (
-          <div className="animate-fade-in">
-            {/* Images Grid - 3 Images */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              {activeCapability.images.map((img, index) => (
-                <div key={index} className="relative rounded-xl overflow-hidden aspect-[16/10]">
-                  <img
-                    src={img}
-                    alt={`${activeCapability.title} ${index + 1}`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${activeCapability.color} opacity-10`}
-                  />
-                </div>
-              ))}
-            </div>
-
+          <div className="animate-fade-in flex-1 overflow-y-auto">
             {/* Content */}
             <div className="grid lg:grid-cols-3 gap-10">
               {/* Main Description */}
               <div className="lg:col-span-2">
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">
                   {activeCapability.title}
                 </h3>
                 <p
@@ -239,21 +240,21 @@ export default function Capabilities() {
                 >
                   {activeCapability.subtitle}
                 </p>
-                <p className="text-muted-foreground leading-relaxed mb-8">
+                <p className="text-white/70 leading-relaxed mb-8">
                   {activeCapability.description}
                 </p>
 
                 {/* Scope */}
                 <div className="mb-8">
-                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
                     <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${activeCapability.color}`} />
                     Scope Includes:
                   </h4>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {activeCapability.scope.map((item, i) => (
                       <div key={i} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{item}</span>
+                        <Check className="w-4 h-4 text-amber-400 mt-1 flex-shrink-0" />
+                        <span className="text-sm text-white/70">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -262,15 +263,15 @@ export default function Capabilities() {
                 {/* Inspection Support (if exists) */}
                 {activeCapability.inspection && (
                   <div className="mb-8">
-                    <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
                       <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${activeCapability.color}`} />
                       Inspection Support:
                     </h4>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {activeCapability.inspection.map((item, i) => (
                         <div key={i} className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{item}</span>
+                          <Check className="w-4 h-4 text-amber-400 mt-1 flex-shrink-0" />
+                          <span className="text-sm text-white/70">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -280,7 +281,7 @@ export default function Capabilities() {
                 {/* Coverage (if exists) */}
                 {activeCapability.coverage && (
                   <div className="mb-8">
-                    <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
                       <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${activeCapability.color}`} />
                       Coverage:
                     </h4>
@@ -288,7 +289,7 @@ export default function Capabilities() {
                       {activeCapability.coverage.map((item, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 bg-slate-100 rounded-full text-sm text-muted-foreground"
+                          className="px-3 py-1 bg-white/10 rounded-full text-sm text-white/70"
                         >
                           {item}
                         </span>
@@ -299,8 +300,8 @@ export default function Capabilities() {
               </div>
 
               {/* Delivery Focus */}
-              <div className="bg-slate-50 rounded-xl p-6">
-                <h4 className="font-semibold text-foreground mb-4">Delivery Focus</h4>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <h4 className="font-semibold text-white mb-4">Delivery Focus</h4>
                 <div className="space-y-4">
                   {activeCapability.focus.map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -309,7 +310,7 @@ export default function Capabilities() {
                       >
                         <Check className="w-3 h-3 text-white" />
                       </div>
-                      <span className="text-sm text-muted-foreground">{item}</span>
+                      <span className="text-sm text-white/70">{item}</span>
                     </div>
                   ))}
                 </div>
