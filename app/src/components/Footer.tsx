@@ -56,7 +56,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="mailto:info@ei-rec.com"
+                href="mailto:sandeep@eirec-ets.com"
                 className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
@@ -108,26 +108,26 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-6">Get in Touch</h3>
             <div className="space-y-4">
               <div>
-                <p className="text-sm text-slate-500 mb-1">General Inquiries</p>
+                <p className="text-sm text-slate-500 mb-1">Founder & Director</p>
                 <a
-                  href="mailto:info@ei-rec.com"
+                  href="mailto:sandeep@eirec-ets.com"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  info@ei-rec.com
+                  sandeep@eirec-ets.com
                 </a>
               </div>
               <div>
-                <p className="text-sm text-slate-500 mb-1">Business Development</p>
+                <p className="text-sm text-slate-500 mb-1">Operations Director</p>
                 <a
-                  href="mailto:bd@ei-rec.com"
+                  href="mailto:sham@eirec-ets.com"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  bd@ei-rec.com
+                  sham@eirec-ets.com
                 </a>
               </div>
               <div>
                 <p className="text-sm text-slate-500 mb-1">Offices</p>
-                <p className="text-slate-300 text-sm">Singapore & Dubai, UAE</p>
+                <p className="text-slate-300 text-sm">Singapore, Malaysia & India</p>
               </div>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-slate-500 text-sm text-center sm:text-left">
-              Copyright &copy; {new Date().getFullYear()} EIREC Energy & Technical Services. All rights reserved.
+              Copyright &copy; {new Date().getFullYear()} EIREC Talent. All rights reserved.
             </p>
             <button
               onClick={scrollToTop}
