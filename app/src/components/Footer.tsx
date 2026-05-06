@@ -53,7 +53,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="mailto:sandeep@eirec-ets.com"
+                href="mailto:sandeep@ei-rec.com"
                 className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
@@ -107,19 +107,19 @@ export default function Footer() {
               <div>
                 <p className="text-sm text-slate-500 mb-1">Founder & Director</p>
                 <a
-                  href="mailto:sandeep@eirec-ets.com"
+                  href="mailto:sandeep@ei-rec.com"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  sandeep@eirec-ets.com
+                  sandeep@ei-rec.com
                 </a>
               </div>
               <div>
                 <p className="text-sm text-slate-500 mb-1">Operations Director</p>
                 <a
-                  href="mailto:sham@eirec-ets.com"
+                  href="mailto:sham@ei-rec.com"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  sham@eirec-ets.com
+                  sham@ei-rec.com
                 </a>
               </div>
               <div>
