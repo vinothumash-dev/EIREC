@@ -1,72 +1,59 @@
 import { useEffect, useRef, useState } from 'react';
-import { Building2, HardHat, Settings, Factory, Wind, Zap } from 'lucide-react';
 
 const clientTypes = [
   {
-    icon: Building2,
     title: 'Operators & Asset Owners',
     items: [
       'Asset maintenance and optimisation',
       'Shutdowns and turnaround execution',
       'Performance improvement initiatives',
     ],
-    color: 'bg-amber-500/10',
-    iconColor: 'text-amber-500',
+    dotColor: 'bg-amber-500',
   },
   {
-    icon: HardHat,
     title: 'EPC Contractors',
     items: [
       'Construction and commissioning support',
       'Project execution and coordination',
       'Interface management',
     ],
-    color: 'bg-blue-500/10',
-    iconColor: 'text-blue-500',
+    dotColor: 'bg-blue-500',
   },
   {
-    icon: Settings,
     title: 'OEMs',
     items: [
       'Equipment installation and commissioning',
       'Field service and maintenance',
       'Outage and major component support',
     ],
-    color: 'bg-primary/10',
-    iconColor: 'text-primary',
+    dotColor: 'bg-primary',
   },
   {
-    icon: Factory,
     title: 'Industrial & Processing Facilities',
     items: [
       'Refinery and petrochemical shutdowns',
       'Mechanical and rotating equipment works',
       'Restart and commissioning support',
     ],
-    color: 'bg-orange-500/10',
-    iconColor: 'text-orange-500',
+    dotColor: 'bg-orange-500',
   },
   {
-    icon: Wind,
     title: 'Renewable Energy Developers',
     items: [
       'Wind installation and commissioning',
       'MCE and service campaigns',
       'O&M support',
     ],
-    color: 'bg-emerald-500/10',
-    iconColor: 'text-emerald-500',
+    dotColor: 'bg-emerald-500',
   },
   {
-    icon: Zap,
     title: 'Power Generation Companies',
     items: [
       'Outage execution',
       'Turbine and generator maintenance',
       'Performance optimisation',
     ],
-    color: 'bg-indigo-500/10',
-    iconColor: 'text-indigo-500',
+    dotColor: 'bg-indigo-500',
   },
 ];
 
@@ -137,14 +124,11 @@ export default function Clients() {
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
-              <div className={`w-12 h-12 ${client.color} rounded-xl flex items-center justify-center mb-4`}>
-                <client.icon className={`w-6 h-6 ${client.iconColor}`} />
-              </div>
               <h3 className="font-semibold text-foreground mb-3">{client.title}</h3>
               <ul className="space-y-2">
                 {client.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${client.iconColor.replace('text-', 'bg-')}`} />
+                    <span className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${client.dotColor}`} />
                     {item}
                   </li>
                 ))}

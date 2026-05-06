@@ -1,24 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
-import { Target, Shield, Globe, Wrench } from 'lucide-react';
 
 const values = [
   {
-    icon: Target,
     title: 'Take Ownership',
     description: 'We take full accountability for every scope we commit to.',
   },
   {
-    icon: Shield,
     title: 'Execute Safely',
     description: 'Safety is embedded in every aspect of our operations.',
   },
   {
-    icon: Wrench,
     title: 'Deliver Reliably',
     description: 'Consistent, quality delivery that meets schedule and standards.',
   },
   {
-    icon: Globe,
     title: 'Global Reach',
     description: 'Supporting projects across oil & gas, wind, and industrial energy.',
   },
@@ -111,9 +106,6 @@ export default function About() {
                   }`}
                   style={{ transitionDelay: `${400 + index * 100}ms` }}
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <value.icon className="w-6 h-6 text-primary" />
-                  </div>
                   <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
                   <p className="text-sm text-muted-foreground">{value.description}</p>
                 </div>

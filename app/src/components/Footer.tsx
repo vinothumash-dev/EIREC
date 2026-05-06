@@ -1,4 +1,4 @@
-import { Zap, Mail, Linkedin, ArrowUp } from 'lucide-react';
+import { Mail, Linkedin, ArrowUp } from 'lucide-react';
 
 const quickLinks = [
   { name: 'Home', href: '#home' },
@@ -40,9 +40,6 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-2 mb-6">
-              <div className="p-2 bg-primary rounded-lg">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
               <span className="text-xl font-bold">
                 EI<span className="text-primary">REC</span>
               </span>

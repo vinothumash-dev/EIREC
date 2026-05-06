@@ -1,49 +1,33 @@
 import { useEffect, useRef, useState } from 'react';
-import { 
-  ClipboardList, 
-  HardHat, 
-  Settings, 
-  Timer, 
-  TrendingUp, 
-  Search,
-  GraduationCap,
-  ArrowRight
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const services = [
   {
-    icon: ClipboardList,
     title: 'Project & Construction Management',
     description: 'End-to-end project delivery with full accountability for schedule, budget, and quality.',
   },
   {
-    icon: HardHat,
     title: 'Field Service & Technical Execution',
     description: 'Hands-on technical teams delivering defined scopes with precision and expertise.',
   },
   {
-    icon: Settings,
     title: 'Commissioning & Start-up',
     description: 'Systematic commissioning processes ensuring safe and efficient facility start-up.',
   },
   {
-    icon: Timer,
     title: 'Shutdowns & Turnarounds (TAR)',
     description: 'Critical maintenance execution within tight shutdown windows.',
   },
   {
-    icon: TrendingUp,
     title: 'Asset Management & Performance',
     description: 'Optimizing asset performance and extending operational life.',
   },
   {
-    icon: Search,
     title: 'Inspection & Surveying',
     description: 'Advanced inspection solutions including drone-enabled surveying.',
   },
   {
-    icon: GraduationCap,
     title: "Technical Advisory & Owner's Engineer",
     description: 'Expert guidance and independent engineering support for complex projects.',
   },
@@ -117,9 +101,6 @@ export default function Services() {
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                <service.icon className="w-6 h-6 text-primary" />
-              </div>
               <h3 className="font-semibold text-foreground mb-2">{service.title}</h3>
               <p className="text-sm text-muted-foreground">{service.description}</p>
             </div>

@@ -1,34 +1,27 @@
 import { useEffect, useRef, useState } from 'react';
-import { Target, Layers, Link2, Flame, Globe, Cpu } from 'lucide-react';
 
 const whyEirecPillars = [
   {
-    icon: Target,
     title: 'Execution-Focused',
     description: 'We take ownership of scope and deliver through hands-on technical execution, not advisory alone.',
   },
   {
-    icon: Layers,
     title: 'Multi-Sector Capability',
     description: 'Oil & gas, wind, power, and industrial processing — enabling support across the full energy value chain.',
   },
   {
-    icon: Link2,
     title: 'OEM & EPC Alignment',
     description: 'Structured to integrate into complex project environments with minimal onboarding.',
   },
   {
-    icon: Flame,
     title: 'High-Pressure Delivery',
     description: 'Specialised in commissioning, outages, and shutdowns where time and precision are critical.',
   },
   {
-    icon: Globe,
     title: 'Global Deployment',
     description: 'Ability to mobilise teams across regions — Asia, Middle East, Africa, and South America — including remote and offshore locations.',
   },
   {
-    icon: Cpu,
     title: 'Future-Ready',
     description: 'Integration of drones, robotics, and digital tools to support next-generation asset management.',
   },
@@ -101,9 +94,6 @@ export default function Approach() {
               }`}
               style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
-              <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4">
-                <pillar.icon className="w-6 h-6 text-amber-400" />
-              </div>
               <h3 className="font-semibold text-white mb-2">{pillar.title}</h3>
               <p className="text-sm text-white/60">{pillar.description}</p>
             </div>

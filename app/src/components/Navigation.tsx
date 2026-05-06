@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -38,7 +38,9 @@ export default function Navigation() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navHeight = 80;
+      const top = element.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
     setIsMobileMenuOpen(false);
   };
@@ -62,11 +64,6 @@ export default function Navigation() {
             }}
             className="flex items-center gap-2 group"
           >
-            <div className={`p-2 rounded-lg transition-colors ${
-              isScrolled ? 'bg-primary' : 'bg-white/20 backdrop-blur-sm'
-            }`}>
-              <Zap className={`w-5 h-5 ${isScrolled ? 'text-white' : 'text-white'}`} />
-            </div>
             <span className={`text-xl font-bold tracking-tight transition-colors ${
               isScrolled ? 'text-foreground' : 'text-white'
             }`}>

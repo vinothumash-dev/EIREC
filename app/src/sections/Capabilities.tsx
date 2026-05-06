@@ -3,33 +3,6 @@ import { Droplets, Wind, Zap, Wrench, Check } from 'lucide-react';
 
 const capabilities = [
   {
-    id: 'oilfield',
-    icon: Droplets,
-    title: 'Oil-Field Services',
-    subtitle: 'Upstream Operations & Production Systems',
-    description: 'We provide specialised technical services supporting drilling, intervention, and production operations across upstream oil & gas environments.',
-    scope: [
-      'Managed Pressure Drilling (MPD)',
-      'Drilling & Completion Support',
-      'Production Systems & Optimisation',
-      'Coiled Tubing & Well Intervention',
-      'Hydraulic Workover Operations',
-      'Well Testing & Flowback',
-      'Drilling Services',
-    ],
-    focus: [
-      'Execution in remote and high-risk environments',
-      'Alignment with operator and OEM standards',
-      'Reliable performance under complex field conditions',
-    ],
-    images: [
-      `${import.meta.env.BASE_URL}images/capability-1.png`,
-      `${import.meta.env.BASE_URL}images/capability-2.png`,
-      `${import.meta.env.BASE_URL}images/capability-3.png`,
-    ],
-    color: 'from-amber-500 to-orange-600',
-  },
-  {
     id: 'wind',
     icon: Wind,
     title: 'Wind Energy Services',
@@ -65,7 +38,34 @@ const capabilities = [
       `${import.meta.env.BASE_URL}images/capability-5.png`,
       `${import.meta.env.BASE_URL}images/capability-6.png`,
     ],
-    color: 'from-emerald-500 to-teal-600',
+    color: 'from-sky-300 to-blue-400',
+  },
+  {
+    id: 'oilfield',
+    icon: Droplets,
+    title: 'Oil-Field Services',
+    subtitle: 'Upstream Operations & Production Systems',
+    description: 'We provide specialised technical services supporting drilling, intervention, and production operations across upstream oil & gas environments.',
+    scope: [
+      'Managed Pressure Drilling (MPD)',
+      'Drilling & Completion Support',
+      'Production Systems & Optimisation',
+      'Coiled Tubing & Well Intervention',
+      'Hydraulic Workover Operations',
+      'Well Testing & Flowback',
+      'Drilling Services',
+    ],
+    focus: [
+      'Execution in remote and high-risk environments',
+      'Alignment with operator and OEM standards',
+      'Reliable performance under complex field conditions',
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}images/capability-1.png`,
+      `${import.meta.env.BASE_URL}images/capability-2.png`,
+      `${import.meta.env.BASE_URL}images/capability-3.png`,
+    ],
+    color: 'from-amber-500 to-orange-600',
   },
   {
     id: 'power',
@@ -103,7 +103,7 @@ const capabilities = [
       `${import.meta.env.BASE_URL}images/capability-8.png`,
       `${import.meta.env.BASE_URL}images/capability-9.png`,
     ],
-    color: 'from-blue-500 to-indigo-600',
+    color: 'from-sky-300 to-blue-400',
   },
   {
     id: 'tar',
@@ -135,14 +135,14 @@ const capabilities = [
       `${import.meta.env.BASE_URL}images/capability-11.png`,
       `${import.meta.env.BASE_URL}images/capability-12.png`,
     ],
-    color: 'from-red-500 to-rose-600',
+    color: 'from-sky-300 to-blue-400',
   },
 ];
 
 export default function Capabilities() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState('oilfield');
+  const [activeTab, setActiveTab] = useState('wind');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
