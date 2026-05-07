@@ -31,7 +31,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-            <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+            {/* <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" /> */}
             <span className="text-white/90 text-sm font-medium">
               Energy & Technical Services
             </span>
